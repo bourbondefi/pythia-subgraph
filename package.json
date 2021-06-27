@@ -1,0 +1,35 @@
+{
+  "name": "pythia-subgraph",
+  "description": "Pythia Subgraph",
+  "version": "2.0.0",
+  "repository": "git@github.com:bourbondefi/pythia-subgraph.git",
+  "author": "Pythia",
+  "license": "MIT",
+  "scripts": {
+    "codegen:prediction": "graph codegen subgraphs/prediction.yaml",
+    "build:prediction": "graph build subgraphs/prediction.yaml",
+    "deploy:prediction": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ pancakeswap/prediction subgraphs/prediction.yaml",
+    "format:check": "prettier --check '*/**/*.{js,ts}'",
+    "format:write": "prettier --write '*/**/*.{js,ts}'",
+    "lint": "eslint '*/**/*.{js,ts}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format:check",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@graphprotocol/graph-cli": "^0.20.0",
+    "@graphprotocol/graph-ts": "^0.20.0",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^4.3.8",
+    "prettier": "^2.3.0",
+    "typescript": "^4.3.2"
+  }
+}
