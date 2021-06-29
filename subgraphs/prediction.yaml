@@ -8,7 +8,7 @@ dataSources:
     name: Prediction
     network: bsc
     source:
-      address: '0x7187A928CeA210De4E2304046708b5974f47b405'
+      address: '0x4339FEaEa810CAF880bCdF250A70De6D33a27ED3'
       abi: Prediction
       startBlock: 6950840
     mapping:
